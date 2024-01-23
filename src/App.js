@@ -1,25 +1,28 @@
-import logo from './logo.svg';
+import React from 'react';
+import { Route, Routes } from 'react-router-dom';
+import Home from './components/home';
+import Carousel from './components/carousel';
 import './App.css';
+import Nasa from './components/nasa';
 
 function App() {
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Routes>
+      <Route path="/" element={<Home />} />
+      <Route path="/images" element={<Carousel />} />
+      <Route path='/nasa' element={<Nasa />} />
+    </Routes>
   );
 }
 
 export default App;
+
+
+// tasks for today
+// create a todo app to render all todos from https://jsonplaceholder.typicode.com/todos
+// add buttons to toggle completion status on the todo
+// add filtering functionality to view all, complete, and incomplete todos all 3 categories
+// todo index
+// todo index item
+// new todo form (bonus)
